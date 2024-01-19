@@ -25,7 +25,11 @@ enum SnapCategoryEnum {
   entertainment,
   featured,
   finance,
+  gameDev,
+  gameEmulators,
   games,
+  gnomeGames,
+  kdeGames,
   healthAndFitness,
   musicAndAudio,
   newsAndWeather,
@@ -40,7 +44,14 @@ enum SnapCategoryEnum {
   unknown,
   ubuntuDesktop;
 
-  bool get hidden => [unknown, ubuntuDesktop].contains(this);
+  bool get hidden => [
+        gameDev,
+        gameEmulators,
+        gnomeGames,
+        kdeGames,
+        unknown,
+        ubuntuDesktop
+      ].contains(this);
 
   String get categoryName => name.replaceAllMapped(
       RegExp('[A-Z]'), (match) => '-${match[0]!.toLowerCase()}');
@@ -61,6 +72,45 @@ enum SnapCategoryEnum {
             'gnome-mines',
             'gnome-sudoku',
           ],
+        gameDev => ['godot', 'blender', 'gimp', 'krita', 'inkscape'],
+        gameEmulators => [
+            'retroarch',
+            'dolphin-emulator',
+            'citra-emu',
+            'ppsspp-emu',
+            'yuzu',
+            'mupen64plus-gui',
+            'doxbox-x',
+            'mame',
+            'mgba',
+            'rpcs3-emu',
+          ],
+        gnomeGames => [
+            'gnome-sudoku',
+            'gnome-mahjongg',
+            'gnome-2048',
+            'gnome-mines',
+            'gnome-chess',
+            'gnome-klotski',
+            'gnome-tetravex',
+            'gnome-robots',
+            'gnome-nibbles',
+            'gnome-hitori',
+            'five-or-more',
+            'quadrapassel',
+          ],
+        kdeGames => [
+            'ksirk',
+            'kgeography',
+            'kigo',
+            'kdiamond',
+            'bomber',
+            'kubrick',
+            'palapeli',
+            'ksudoku',
+            'kmines',
+            'kgoldrunner',
+          ],
         _ => null,
       };
 
@@ -74,6 +124,10 @@ enum SnapCategoryEnum {
         featured => l10n.snapCategoryFeatured,
         finance => l10n.snapCategoryFinance,
         games => l10n.snapCategoryGames,
+        gameDev => l10n.snapCategoryGameDev,
+        gameEmulators => l10n.snapCategoryGameEmulators,
+        gnomeGames => l10n.snapCategoryGnomeGames,
+        kdeGames => l10n.snapCategoryKdeGames,
         healthAndFitness => l10n.snapCategoryHealthAndFitness,
         musicAndAudio => l10n.snapCategoryMusicAndAudio,
         newsAndWeather => l10n.snapCategoryNewsAndWeather,
@@ -93,6 +147,10 @@ enum SnapCategoryEnum {
         development => l10n.snapCategoryDevelopmentSlogan,
         featured => l10n.snapCategoryFeaturedSlogan,
         games => l10n.snapCategoryGamesSlogan,
+        gameDev => l10n.snapCategoryGameDevSlogan,
+        gameEmulators => l10n.snapCategoryGameEmulatorsSlogan,
+        gnomeGames => l10n.snapCategoryGnomeGamesSlogan,
+        kdeGames => l10n.snapCategoryKdeGamesSlogan,
         productivity => l10n.snapCategoryProductivitySlogan,
         ubuntuDesktop => l10n.snapCategoryUbuntuDesktopSlogan,
         _ => '',
@@ -140,6 +198,10 @@ enum SnapCategoryEnum {
         development => _kBannerColors[9],
         featured => _kBannerColors[2],
         productivity => _kBannerColors[4],
+        gameDev => _kBannerColors[1],
+        gameEmulators => _kBannerColors[2],
+        gnomeGames => _kBannerColors[3],
+        kdeGames => _kBannerColors[4],
         _ => _kBannerColors[0]
       };
 }

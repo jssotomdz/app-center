@@ -1,3 +1,4 @@
+import 'package:app_center/explore.dart';
 import 'package:app_center/games.dart';
 import 'package:app_center/l10n.dart';
 import 'package:app_center/layout.dart';
@@ -27,11 +28,61 @@ class GamesPage extends ConsumerWidget {
           GamesPageFeatured(),
           SizedBox(height: kPagePadding),
         ]),
-        SliverList.list(children: const [
-          SizedBox(height: 56),
-          GamesPagePack(),
-          SizedBox(height: kPagePadding),
-        ]),
+        SliverList.list(
+          children: [
+            Row(
+              children: [
+                const Expanded(
+                    flex: 306 - 160,
+                    child: CategoryBanner(
+                      category: SnapCategoryEnum.gameDev,
+                      padding: _CategoryBannerProperties.padding,
+                      height: _CategoryBannerProperties.height,
+                      kMaxSize: _CategoryBannerProperties.kMaxSize,
+                      kIconSize: _CategoryBannerProperties.kIconSize,
+                      fontSize: _CategoryBannerProperties.fontSize,
+                    )),
+                Container(width: 12),
+                const Expanded(
+                    flex: 306 - 160,
+                    child: CategoryBanner(
+                      category: SnapCategoryEnum.gameEmulators,
+                      padding: _CategoryBannerProperties.padding,
+                      height: _CategoryBannerProperties.height,
+                      kMaxSize: _CategoryBannerProperties.kMaxSize,
+                      kIconSize: _CategoryBannerProperties.kIconSize,
+                      fontSize: _CategoryBannerProperties.fontSize,
+                    ))
+              ],
+            ),
+            const SizedBox(height: 12),
+            Row(
+              children: [
+                const Expanded(
+                    flex: 306 - 160,
+                    child: CategoryBanner(
+                      category: SnapCategoryEnum.gnomeGames,
+                      padding: _CategoryBannerProperties.padding,
+                      height: _CategoryBannerProperties.height,
+                      kMaxSize: _CategoryBannerProperties.kMaxSize,
+                      kIconSize: _CategoryBannerProperties.kIconSize,
+                      fontSize: _CategoryBannerProperties.fontSize,
+                    )),
+                Container(width: 12),
+                const Expanded(
+                    flex: 306 - 160,
+                    child: CategoryBanner(
+                      category: SnapCategoryEnum.kdeGames,
+                      padding: _CategoryBannerProperties.padding,
+                      height: _CategoryBannerProperties.height,
+                      kMaxSize: _CategoryBannerProperties.kMaxSize,
+                      kIconSize: _CategoryBannerProperties.kIconSize,
+                      fontSize: _CategoryBannerProperties.fontSize,
+                    ))
+              ],
+            )
+          ],
+        ),
       ],
     );
   }
@@ -46,4 +97,12 @@ class _Title extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(text, style: Theme.of(context).textTheme.headlineSmall);
   }
+}
+
+class _CategoryBannerProperties {
+  static const double padding = 24;
+  static const double height = 150;
+  static const double kMaxSize = 60;
+  static const double kIconSize = 24;
+  static const double fontSize = 16;
 }
