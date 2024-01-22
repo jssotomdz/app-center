@@ -4,6 +4,7 @@ import 'package:app_center/l10n.dart';
 import 'package:app_center/layout.dart';
 import 'package:app_center/snapd.dart';
 import 'package:app_center/store.dart';
+import 'package:app_center/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -20,17 +21,18 @@ class GamesPage extends ConsumerWidget {
     return ResponsiveLayoutScrollView(
       slivers: [
         SliverList.list(children: [
-          const SizedBox(height: 56),
-          _Title(text: SnapCategoryEnum.games.localize(l10n)),
           const SizedBox(height: kPagePadding),
+          _Title(text: SnapCategoryEnum.games.localize(l10n)),
         ]),
         SliverList.list(children: const [
-          SizedBox(height: 56),
+          SizedBox(height: kPagePadding),
           GamesPageFeatured(),
           SizedBox(height: kPagePadding),
         ]),
+        const CategorySnapList(category: SnapCategoryEnum.games),
         SliverList.list(
           children: [
+            const SizedBox(height: 56),
             Row(
               children: [
                 const Expanded(
@@ -81,6 +83,9 @@ class GamesPage extends ConsumerWidget {
                       fontSize: _CategoryBannerProperties.fontSize,
                     ))
               ],
+            ),
+            const SizedBox(
+              height: kPagePadding,
             )
           ],
         ),
@@ -135,6 +140,6 @@ class _CategoryBannerProperties {
   static const double padding = 24;
   static const double height = 150;
   static const double kMaxSize = 60;
-  static const double kIconSize = 24;
+  static const double kIconSize = 32;
   static const double fontSize = 16;
 }
