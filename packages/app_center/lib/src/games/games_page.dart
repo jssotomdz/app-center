@@ -29,8 +29,67 @@ class GamesPage extends ConsumerWidget {
           GamesPageFeatured(),
           SizedBox(height: kPagePadding),
         ]),
+        const CategorySnapList(category: SnapCategoryEnum.games),
+        SliverList.list(
+          children: [
+            const SizedBox(height: kPagePadding),
+            Row(
+              children: [
+                const Expanded(
+                    flex: 306 - 160,
+                    child: CategoryBanner(
+                      category: SnapCategoryEnum.gameDev,
+                      padding: _CategoryBannerProperties.padding,
+                      height: _CategoryBannerProperties.height,
+                      kMaxSize: _CategoryBannerProperties.kMaxSize,
+                      kIconSize: _CategoryBannerProperties.kIconSize,
+                      fontSize: _CategoryBannerProperties.fontSize,
+                    )),
+                Container(width: 12),
+                const Expanded(
+                    flex: 306 - 160,
+                    child: CategoryBanner(
+                      category: SnapCategoryEnum.gameEmulators,
+                      padding: _CategoryBannerProperties.padding,
+                      height: _CategoryBannerProperties.height,
+                      kMaxSize: _CategoryBannerProperties.kMaxSize,
+                      kIconSize: _CategoryBannerProperties.kIconSize,
+                      fontSize: _CategoryBannerProperties.fontSize,
+                    ))
+              ],
+            ),
+            const SizedBox(height: 12),
+            Row(
+              children: [
+                const Expanded(
+                    flex: 306 - 160,
+                    child: CategoryBanner(
+                      category: SnapCategoryEnum.gnomeGames,
+                      padding: _CategoryBannerProperties.padding,
+                      height: _CategoryBannerProperties.height,
+                      kMaxSize: _CategoryBannerProperties.kMaxSize,
+                      kIconSize: _CategoryBannerProperties.kIconSize,
+                      fontSize: _CategoryBannerProperties.fontSize,
+                    )),
+                Container(width: 12),
+                const Expanded(
+                    flex: 306 - 160,
+                    child: CategoryBanner(
+                      category: SnapCategoryEnum.kdeGames,
+                      padding: _CategoryBannerProperties.padding,
+                      height: _CategoryBannerProperties.height,
+                      kMaxSize: _CategoryBannerProperties.kMaxSize,
+                      kIconSize: _CategoryBannerProperties.kIconSize,
+                      fontSize: _CategoryBannerProperties.fontSize,
+                    ))
+              ],
+            ),
+            const SizedBox(
+              height: kPagePadding,
+            )
+          ],
+        ),
         SliverList.list(children: [
-          const SizedBox(height: kPagePadding),
           Container(
             padding: const EdgeInsets.all(48),
             decoration: BoxDecoration(
@@ -53,7 +112,7 @@ class GamesPage extends ConsumerWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          "Start playing on Ubuntu!", //TODO: l10n
+                          "External references", //TODO: l10n
                           style: Theme.of(context)
                               .textTheme
                               .headlineSmall!
@@ -201,66 +260,6 @@ class GamesPage extends ConsumerWidget {
           ),
           const SizedBox(height: kPagePadding),
         ]),
-        const CategorySnapList(category: SnapCategoryEnum.games),
-        SliverList.list(
-          children: [
-            const SizedBox(height: kPagePadding),
-            Row(
-              children: [
-                const Expanded(
-                    flex: 306 - 160,
-                    child: CategoryBanner(
-                      category: SnapCategoryEnum.gameDev,
-                      padding: _CategoryBannerProperties.padding,
-                      height: _CategoryBannerProperties.height,
-                      kMaxSize: _CategoryBannerProperties.kMaxSize,
-                      kIconSize: _CategoryBannerProperties.kIconSize,
-                      fontSize: _CategoryBannerProperties.fontSize,
-                    )),
-                Container(width: 12),
-                const Expanded(
-                    flex: 306 - 160,
-                    child: CategoryBanner(
-                      category: SnapCategoryEnum.gameEmulators,
-                      padding: _CategoryBannerProperties.padding,
-                      height: _CategoryBannerProperties.height,
-                      kMaxSize: _CategoryBannerProperties.kMaxSize,
-                      kIconSize: _CategoryBannerProperties.kIconSize,
-                      fontSize: _CategoryBannerProperties.fontSize,
-                    ))
-              ],
-            ),
-            const SizedBox(height: 12),
-            Row(
-              children: [
-                const Expanded(
-                    flex: 306 - 160,
-                    child: CategoryBanner(
-                      category: SnapCategoryEnum.gnomeGames,
-                      padding: _CategoryBannerProperties.padding,
-                      height: _CategoryBannerProperties.height,
-                      kMaxSize: _CategoryBannerProperties.kMaxSize,
-                      kIconSize: _CategoryBannerProperties.kIconSize,
-                      fontSize: _CategoryBannerProperties.fontSize,
-                    )),
-                Container(width: 12),
-                const Expanded(
-                    flex: 306 - 160,
-                    child: CategoryBanner(
-                      category: SnapCategoryEnum.kdeGames,
-                      padding: _CategoryBannerProperties.padding,
-                      height: _CategoryBannerProperties.height,
-                      kMaxSize: _CategoryBannerProperties.kMaxSize,
-                      kIconSize: _CategoryBannerProperties.kIconSize,
-                      fontSize: _CategoryBannerProperties.fontSize,
-                    ))
-              ],
-            ),
-            const SizedBox(
-              height: kPagePadding,
-            )
-          ],
-        ),
         SliverList.list(
           children: [
             Row(
