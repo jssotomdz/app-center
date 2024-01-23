@@ -1,4 +1,3 @@
-import 'package:app_center/explore.dart';
 import 'package:app_center/games.dart';
 import 'package:app_center/l10n.dart';
 import 'package:app_center/layout.dart';
@@ -43,7 +42,6 @@ class GamesPage extends ConsumerWidget {
                       height: _CategoryBannerProperties.height,
                       kMaxSize: _CategoryBannerProperties.kMaxSize,
                       kIconSize: _CategoryBannerProperties.kIconSize,
-                      fontSize: _CategoryBannerProperties.fontSize,
                     )),
                 Container(width: 12),
                 const Expanded(
@@ -54,7 +52,6 @@ class GamesPage extends ConsumerWidget {
                       height: _CategoryBannerProperties.height,
                       kMaxSize: _CategoryBannerProperties.kMaxSize,
                       kIconSize: _CategoryBannerProperties.kIconSize,
-                      fontSize: _CategoryBannerProperties.fontSize,
                     ))
               ],
             ),
@@ -69,7 +66,6 @@ class GamesPage extends ConsumerWidget {
                       height: _CategoryBannerProperties.height,
                       kMaxSize: _CategoryBannerProperties.kMaxSize,
                       kIconSize: _CategoryBannerProperties.kIconSize,
-                      fontSize: _CategoryBannerProperties.fontSize,
                     )),
                 Container(width: 12),
                 const Expanded(
@@ -80,7 +76,6 @@ class GamesPage extends ConsumerWidget {
                       height: _CategoryBannerProperties.height,
                       kMaxSize: _CategoryBannerProperties.kMaxSize,
                       kIconSize: _CategoryBannerProperties.kIconSize,
-                      fontSize: _CategoryBannerProperties.fontSize,
                     ))
               ],
             ),
@@ -311,5 +306,4 @@ class _CategoryBannerProperties {
   static const double height = 150;
   static const double kMaxSize = 60;
   static const double kIconSize = 32;
-  static const double fontSize = 16;
 }
