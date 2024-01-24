@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
-// TODO: break down into smaller widgets
 class ExternalTools extends StatelessWidget {
   const ExternalTools({super.key});
 

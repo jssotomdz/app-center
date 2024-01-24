@@ -68,4 +68,8 @@ flutter:
   generate: true
   assets:
     - assets/
+    - assets/images/
+    - assets/images/dino/
+    - assets/images/cacti/
+    - assets/images/ptera/
     

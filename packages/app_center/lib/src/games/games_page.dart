@@ -28,6 +28,9 @@ class GamesPage extends ConsumerWidget {
           GamesPageFeatured(),
           SizedBox(height: kPagePadding),
         ]),
+        SliverList.list(children: const [
+          SizedBox(height: 200, width: 700, child: DinoGame())
+        ]),
         const CategorySnapList(category: SnapCategoryEnum.games),
         SliverList.list(
           children: [
