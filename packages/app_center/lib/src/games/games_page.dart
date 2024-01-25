@@ -88,8 +88,8 @@ class GamesPage extends ConsumerWidget {
         ),
         SliverList.list(children: [
           ToolsBanner(
-              summary: 'External references', //TODO: l10n
-              buttonText: 'Discover resources',
+              summary: l10n.externalResources,
+              buttonText: l10n.externalResourcesButtonLabel,
               bannerApps: takeRandom(tools, 3)),
           const SizedBox(height: kPagePadding),
         ]),
@@ -110,7 +110,7 @@ class GamesPage extends ConsumerWidget {
                       StoreNavigator.pushSearch(context,
                           category: SnapCategoryEnum.games.categoryName);
                     },
-                    child: const Text('All games'), //TODO: l10n
+                    child: Text(l10n.allGamesButtonLabel),
                   ),
                 ),
                 Flexible(
