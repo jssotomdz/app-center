@@ -21,18 +21,65 @@ class GamesPage extends ConsumerWidget {
     final l10n = AppLocalizations.of(context);
     return ResponsiveLayoutScrollView(
       slivers: [
-        SliverList.list(children: [
-          const SizedBox(height: kPagePadding),
-          _Title(text: SnapCategoryEnum.games.localize(l10n)),
-        ]),
         SliverList.list(children: const [
           SizedBox(height: kPagePadding),
-          GamesPageFeatured(),
+          _Title(text: 'It\'s playtime'),
           SizedBox(height: kPagePadding),
         ]),
-        const CategorySnapList(category: SnapCategoryEnum.games),
+        SliverList.list(children: const [
+          GamesPageFeatured(),
+        ]),
+        SliverList.list(children: const [
+          SizedBox(height: 56),
+          _Title(text: 'Top Games'),
+          SizedBox(height: kPagePadding),
+        ]),
+        const CategorySnapList(
+          category: SnapCategoryEnum.games,
+          numberOfSnaps: 6,
+        ),
         SliverList.list(
           children: [
+            Container(
+              padding: EdgeInsets.all(kCardMargin),
+              child: Row(
+                children: [
+                  Flexible(
+                    flex: 2,
+                    fit: FlexFit.tight,
+                    child: OutlinedButton(
+                      onPressed: () {
+                        StoreNavigator.pushSearch(context,
+                            category: SnapCategoryEnum.games.categoryName);
+                      },
+                      child: Text(l10n.allGamesButtonLabel),
+                    ),
+                  ),
+                  Flexible(
+                    flex: 6,
+                    fit: FlexFit.tight,
+                    child: Container(),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+        SliverList.list(children: const [
+          SizedBox(height: 56),
+          _Title(text: 'Featured Games'),
+          SizedBox(height: kPagePadding),
+        ]),
+        const CategorySnapList(
+          category: SnapCategoryEnum.games,
+          numberOfSnaps: 4,
+          showScreenshots: true,
+          onlyFeatured: true,
+        ),
+        SliverList.list(
+          children: [
+            const SizedBox(height: 56),
+            const _Title(text: 'App Bundles'),
             const SizedBox(height: kPagePadding),
             Row(
               children: [
@@ -93,36 +140,6 @@ class GamesPage extends ConsumerWidget {
               bannerApps: takeRandom(tools, 3)),
           const SizedBox(height: kPagePadding),
         ]),
-        SliverList.list(
-          children: [
-            Row(
-              children: [
-                Flexible(
-                  flex: 3,
-                  fit: FlexFit.tight,
-                  child: Container(),
-                ),
-                Flexible(
-                  flex: 2,
-                  fit: FlexFit.tight,
-                  child: OutlinedButton(
-                    onPressed: () {
-                      StoreNavigator.pushSearch(context,
-                          category: SnapCategoryEnum.games.categoryName);
-                    },
-                    child: Text(l10n.allGamesButtonLabel),
-                  ),
-                ),
-                Flexible(
-                  flex: 3,
-                  fit: FlexFit.tight,
-                  child: Container(),
-                ),
-              ],
-            ),
-            const SizedBox(height: kPagePadding),
-          ],
-        )
       ],
     );
   }
