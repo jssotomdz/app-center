@@ -27,10 +27,7 @@ class GamesPage extends ConsumerWidget {
           SizedBox(height: kPagePadding),
         ]),
         SliverList.list(children: const [
-          FeaturedCarousel(
-            snapAmount: 10,
-            scrollDelay: Duration(seconds: 5),
-          ),
+          FeaturedCarousel(),
         ]),
         SliverList.list(children: const [
           SizedBox(height: 56),
@@ -39,12 +36,11 @@ class GamesPage extends ConsumerWidget {
         ]),
         const CategorySnapList(
           category: SnapCategoryEnum.games,
-          numberOfSnaps: 6,
         ),
         SliverList.list(
           children: [
             Container(
-              padding: EdgeInsets.all(kCardMargin),
+              padding: const EdgeInsets.all(kCardMargin),
               child: Row(
                 children: [
                   Flexible(
