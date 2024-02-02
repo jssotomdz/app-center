@@ -27,7 +27,10 @@ class GamesPage extends ConsumerWidget {
           SizedBox(height: kPagePadding),
         ]),
         SliverList.list(children: const [
-          GamesPageFeatured(),
+          FeaturedCarousel(
+            snapAmount: 10,
+            scrollDelay: Duration(seconds: 5),
+          ),
         ]),
         SliverList.list(children: const [
           SizedBox(height: 56),
