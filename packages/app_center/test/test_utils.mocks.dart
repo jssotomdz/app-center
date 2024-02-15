@@ -995,6 +995,27 @@ class MockSnapdService extends _i1.Mock implements _i6.SnapdService {
       ) as _i14.Future<String>);
 
   @override
+  _i14.Future<String> installMany(
+    List<String>? names, {
+    bool? classic = false,
+  }) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #installMany,
+          [names],
+          {#classic: classic},
+        ),
+        returnValue: _i14.Future<String>.value(_i13.dummyValue<String>(
+          this,
+          Invocation.method(
+            #installMany,
+            [names],
+            {#classic: classic},
+          ),
+        )),
+      ) as _i14.Future<String>);
+
+  @override
   _i14.Future<String> connect(
     String? snap,
     String? plug,
@@ -1063,6 +1084,7 @@ class MockSnapdService extends _i1.Mock implements _i6.SnapdService {
     String? category,
     String? section,
     _i2.SnapFindFilter? filter,
+    _i2.SnapFindScope? scope,
   }) =>
       (super.noSuchMethod(
         Invocation.method(
@@ -1074,6 +1096,7 @@ class MockSnapdService extends _i1.Mock implements _i6.SnapdService {
             #category: category,
             #section: section,
             #filter: filter,
+            #scope: scope,
           },
         ),
         returnValue: _i14.Future<List<_i2.Snap>>.value(<_i2.Snap>[]),
